@@ -3,12 +3,12 @@
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<body>
 
-<body style="background-color:#21A97B">
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E0B4D;">
 
   <a class="navbar-brand" href="https://www.unab.cl/">Seguimiento
-    <img src="../img_asset/fondo-transparente-logo-color-con-texto-azul.png" width="30" height="30" alt="">
+    <img src="https://academiadialogo.cl/web/wp-content/themes/academia/img/logo-blanco.svg" width="30" height="30" alt="">
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,13 +100,13 @@
 						die("Connection failed: " . mysqli_connect_error());
 					}
 					else{
-						$sql_colegios = "SELECT * FROM profesores WHERE tipo = 'Profesor' ";
+						$sql_colegios = "SELECT * FROM profesores ";
 						if($conn->query($sql_colegios)){
 							$result = $conn->query($sql_colegios);
 							if ($result->num_rows > 0) {
     						// output data of each row
     							while($row = $result->fetch_assoc()) {   								
-    								echo "<option value=" .$row["id"]. "> ".$row["nombre_apellido"]."</option>";
+    								echo "<option value=" .$row["id"]. "> ".$row["nombre"]. " ".$row["apellido"]."</option>";
     							}
     							echo "---";
     								 							
@@ -138,13 +138,13 @@
 						die("Connection failed: " . mysqli_connect_error());
 					}
 					else{
-						$sql_colegios = "SELECT * FROM profesores WHERE tipo='Ayudante'";
+						$sql_colegios = "SELECT * FROM ayudante";
 						if($conn->query($sql_colegios)){
 							$result = $conn->query($sql_colegios);
 							if ($result->num_rows > 0) {
     						// output data of each row
     							while($row = $result->fetch_assoc()) {   								
-    								echo "<option value=".$row["id"]. "> ".$row["nombre_apellido"]."</option>";
+    								echo "<option value=".$row["id"]. "> ".$row["nombre"]."</option>";
     							}
     							echo "---";
     								//echo  "<option value=".$row["id_colegio"]. "> ".$row["nombre_colegio"]."</option>";    							
@@ -175,13 +175,13 @@
 						die("Connection failed: " . mysqli_connect_error());
 					}
 					else{
-						$sql_colegios = "SELECT * FROM profesores WHERE tipo='Ayudante'";
+						$sql_colegios = "SELECT * FROM ayudante";
 						if($conn->query($sql_colegios)){
 							$result = $conn->query($sql_colegios);
 							if ($result->num_rows > 0) {
     						// output data of each row
     							while($row = $result->fetch_assoc()) {   								
-    								echo "<option value=".$row["id"]. "> ".$row["nombre_apellido"]."</option>";
+    								echo "<option value=".$row["id"]. "> ".$row["nombre"]."</option>";
     							}
     							echo "---";
     								//echo  "<option value=".$row["id_colegio"]. "> ".$row["nombre_colegio"]."</option>";    							

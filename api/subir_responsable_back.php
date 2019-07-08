@@ -2,6 +2,8 @@
 	error_reporting(E_ALL);
 	echo "<br> <a href='pagina_inicial_fron.php'> VOLVER AL MENU PRINCIPAL </a><br>";
 
+	echo "<br> <a href='subir_responsable_front.php'> VOLVER AL MENU ANTERIOR </a><br>";
+
 	$nombre = filter_input(INPUT_POST, 'nombre');	
 	$apellido = filter_input(INPUT_POST, 'apellido');
 	$pasantia = filter_input(INPUT_POST, 'pasantia');
@@ -39,7 +41,7 @@
 		$conn->close();
 	}
 	else{
-		echo "wuba luba dub";
+		echo "Error de conexión";
 		die;
 	}
 ?>

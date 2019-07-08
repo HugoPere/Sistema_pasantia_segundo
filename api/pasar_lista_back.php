@@ -2,6 +2,8 @@
 	error_reporting(E_ALL);
 	echo "<br> <a href='pagina_inicial_fron.php'> VOLVER AL MENU PRINCIPAL </a><br>";
 
+	echo "<br> <a href='pasar_lista_front.php'> VOLVER AL MENU ANTERIOR </a><br>";
+
 	$asistencia = filter_input(INPUT_POST, 'asistencia');	
 	$profesor = filter_input(INPUT_POST, 'profesor');
 	$pasantia = filter_input(INPUT_POST, 'pasantia');
@@ -39,6 +41,7 @@
 		$conn->close();
 	}
 	else{
+		echo "Error de conexion";
 		die;
 	}
 ?>

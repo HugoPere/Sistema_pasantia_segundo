@@ -4,10 +4,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
-<body style="background-color:#21A97B">
+<body>
 
-
-<img src="../img_asset/fondo-transparente-logo-color-con-texto-azul.png" width="100" height="100"alt="" style=" "center>
+<img src="https://academiadialogo.cl/web/wp-content/themes/academia/img/logo-blanco.svg" width="100" height="100"alt="" style=" "center>
 <br>
 
 <form method="post" action="../api/pagina_inicial_back.php" enctype="multipart/form-data">

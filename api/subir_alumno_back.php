@@ -1,6 +1,10 @@
 <?php
 	error_reporting(E_ALL);
+
 	echo "<br> <a href='pagina_inicial_fron.php'> VOLVER AL MENU PRINCIPAL </a><br>";
+
+	echo "<br> <a href='subir_alumno_front.php'> VOLVER AL MENU ANTERIOR </a><br>";
+	
 	$nombre_est = filter_input(INPUT_POST, 'nombre_est');	
 	$foto = filter_input(INPUT_POST, 'imagen');
 	$colegio = filter_input(INPUT_POST, 'colegio');
@@ -14,13 +18,12 @@
 
 	while(($archivo = readdir($dir_handle)) !== false) {
 	  $ruta = $directorio_base . '/' . $archivo;
-	  echo $ruta . PHP_EOL;
+	  //echo $ruta . PHP_EOL;
 	  if(is_file($ruta)) {
 	      $ext = pathinfo($ruta, PATHINFO_EXTENSION);
 	   }
 	}
 	closedir($dir_handle);
-
 
 	$rut_est = filter_input(INPUT_POST, 'rut_est');
 	$ape_est = filter_input(INPUT_POST, 'ape_est');	
@@ -34,6 +37,10 @@
 	$curso = filter_input(INPUT_POST, 'curso');
 	$sexo = filter_input(INPUT_POST, 'sexo');
 
+	$guion = '-';
+
+	$pos = strpos($rut_est, $guion);
+
 	//Declaracion imagen
 
 	$directorio_base ="../img_asset";
@@ -42,7 +49,7 @@
 
 	while(($archivo = readdir($dir_handle)) !== false) {
 		 $rutados = $directorio_base . '/flecha_cursando.png';
-		  echo $rutados . PHP_EOL;
+		  //echo $rutados . PHP_EOL;
 		  if(is_file($rutados)) {
 		      $ext = pathinfo($rutados, PATHINFO_EXTENSION);
 		   }
@@ -66,7 +73,7 @@
 			die("Connection failed: " . mysqli_connect_error());
 		}
 		else{
-			if(!empty($nombre_est)){
+			if($pos == true){
 				// Attempt insert query execution
 
 				$sql = "INSERT INTO estudiante(nombre_est,ape_est,rut_est, correo_est, foto_est,nac_est,fecha_nac,ciudad,direccion,region,sexo, id_colegio, id_curso, estado_pas_1, estado_pas_2, estado_pas_3) VALUES ('$nombre_est', '$ape_est','$rut_est', '$correo_est', '$ruta', '$nac_est','$fecha_nac','$ciudad','$direccion','$region','$sexo','$colegio','$curso', '$rutados', '$rutados', '$rutados')";
@@ -77,12 +84,15 @@
     				echo "ERROR ". mysqli_error($conn);
 				}
 			}
+			else{
+				echo "Datos erroneos";
+			}
 		}
 
 		$conn->close();
 	}
 	else{
-		
+		echo "No hubo conexion";
 		die;
 	}
 ?>

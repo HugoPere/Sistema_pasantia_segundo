@@ -1,22 +1,11 @@
 <?php
 	error_reporting(E_ALL);
+
 	echo "<br> <a href='pagina_inicial_fron.php'> VOLVER AL MENU PRINCIPAL </a><br>";
 
+	echo "<br> <a href='nota_pasantia_front.php'> VOLVER AL MENU ANTERIOR </a><br>";
+
 	$alumno = filter_input(INPUT_POST, 'rut_est');
-
-	//$directorio_base ="../img_asset";
-
-	//$dir_handle = opendir($directorio_base);
-
-	//while(($archivo = readdir($dir_handle)) !== false) {
-	//	 $ruta = $directorio_base . '/flecha_cursando.png';
-	//	  echo $ruta . PHP_EOL;
-	//	  if(is_file($ruta)) {
-	//	      $ext = pathinfo($ruta, PATHINFO_EXTENSION);
-	//	   }
-	//	}
-
-//	closedir($dir_handle);
 
 	$directorio_base ="../img_asset";
 
@@ -24,7 +13,7 @@
 
 	while(($archivo = readdir($dir_handle)) !== false) {
 		 $rutados = $directorio_base . '/flecha_aprobado.png';
-		  echo $rutados . PHP_EOL;
+		  //echo $rutados . PHP_EOL;
 		  if(is_file($rutados)) {
 		      $ext = pathinfo($rutados, PATHINFO_EXTENSION);
 		   }
@@ -91,9 +80,7 @@
 				} else {
 			    	echo "0 results";
 				}
-			}
-			
-			
+			}	
 		}
 	}
 	$conn->close();	

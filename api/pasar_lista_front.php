@@ -9,11 +9,12 @@
 
 
 </head>
-<body style="background-color:#21A97B">
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E0B4D;">
 
   <a class="navbar-brand" href="https://www.unab.cl/">Seguimiento
-    <img src="../img_asset/fondo-transparente-logo-color-con-texto-azul.png" width="30" height="30" alt="">
+    <img src="https://academiadialogo.cl/web/wp-content/themes/academia/img/logo-blanco.svg" width="30" height="30" alt="">
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +85,7 @@
 							if ($result->num_rows > 0) {
     						// output data of each row
     							while($row = $result->fetch_assoc()) {   								
-    								echo "<option value=".$row["id"]. "> ".$row["nombre_apellido"]."</option>";
+    								echo "<option value=".$row["id"]. "> ".$row["nombre"]. " ".$row["apellido"]. "</option>";
     							}
     							echo "---";
 

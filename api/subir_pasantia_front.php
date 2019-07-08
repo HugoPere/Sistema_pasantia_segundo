@@ -4,11 +4,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body style="background-color:#21A97B">
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E0B4D;">
 
   <a class="navbar-brand" href="https://www.unab.cl/">Seguimiento
-    <img src="../img_asset/fondo-transparente-logo-color-con-texto-azul.png" width="30" height="30" alt="">
+    <img src="https://academiadialogo.cl/web/wp-content/themes/academia/img/logo-blanco.svg" width="30" height="30" alt="">
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,10 +59,10 @@
 				<br>
 	            <select name="Carrera/Doctrina">
 	            	<option value="..">-- Elija --</option>
-  					<option value="Ingenieria">Ingenieria</option>
-  					<option value="Pedagogia">Pedagogia</option>
-  					<option value="Derecho">Derecho</option>
-  					<option value="Medicina">Medicina</option>
+  					<option value="1">Ingenieria</option>
+  					<option value="2">Pedagogia</option>
+  					<option value="3">Derecho</option>
+  					<option value="4">Medicina</option>
 				</select> 	
 				<br>
 				Universidad
@@ -84,7 +85,7 @@
 							if ($result->num_rows > 0) {
     						// output data of each row
     							while($row = $result->fetch_assoc()) {   								
-    								echo "<option value=".$row["sigla"]. "> ".$row["nombre"]."</option>";
+    								echo "<option value=".$row["id"]. "> ".$row["nombre"]."</option>";
     							}
     							echo "---";
     								//echo  "<option value=".$row["id_colegio"]. "> ".$row["nombre_colegio"]."</option>";    							

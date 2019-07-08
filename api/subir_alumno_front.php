@@ -9,11 +9,12 @@
 
 
 </head>
-<body style="background-color:#21A97B">
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E0B4D;">
 
   <a class="navbar-brand" href="https://www.unab.cl/">Seguimiento
-    <img src="../img_asset/fondo-transparente-logo-color-con-texto-azul.png" width="30" height="30" alt="">
+    <img src="https://academiadialogo.cl/web/wp-content/themes/academia/img/logo-blanco.svg" width="30" height="30" alt="">
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,68 +59,97 @@
 	  <div data-role="header">
 	  
 	  </div>
+	  
 
 	  <div data-role="main" class="ui-content">
 	    <form method="post" action="../api/subir_alumno_back.php" enctype="multipart/form-data">
-	      <fieldset data-role="collapsible">
-	        <legend>Ingresar un Alumno</legend>
-	          <label for="name">Rut:</label>
-	          <br>
-	          <input type="text" name="rut_est" id="rut_est" default="Sin digito verificador">
-	        <br>
-	          <label for="name">Nombres:</label>
-	          <br>
-	          <input type="text" name="nombre_est" id="id_est">
-	          <br>
-	          <label for="name">Apellidos:</label>
-	          <br>
-	          <input type="text" name="ape_est" id="ape_est">
-	          <br>
-	          <label for="name">Correo Electrónico:</label>
-	          <br>
-	          <input type="text" name="correo_est" id="correo_est">
-	          <br>
-	          <label for="name">Nacionalidad:</label>
-	          <br>
-	          <input type="text" name="nac_est" id="nac_est">
-	          <br>
-	          <label for="img">Foto Alumno:</label>
-	          <br>
-	          <input type="file" name="imagen" id="imagen">  
-	          <br>
-	          <label for="date">Fecha de Nacimiento: (FORMATO MES/DIA/AÑO)</label>
-	          <br>
-	          <input type="date" name="fecha_nac" id="fecha_nac">
-	          <br>
-	          <label for="name">Ciudad:</label>
-	          <br>
-	          <input type="text" name="ciudad" id="ciudad">
-	          <br>
-	          <label for="name">Direccion:</label>
-	          <br>
-	          <input type="text" name="direccion" id="dir">
-	          <br>
-	          <label for="name">Region</label>
-	           <br> 
-	           <select name="region">
-	            	<option value="..">-- Elija --</option>
-  					<option value="I">I</option>
-  					<option value="II">II</option>
-  					<option value="III">III</option>
-  					<option value="IV">IV</option>
-  					<option value="IV">IV</option>
-  					<option value="V">V</option>
-  					<option value="VI">VI</option>
-  					<option value="VII">VII</option>
-  					<option value="VIII">VIII</option>
-  					<option value="IX">IX</option>
-  					<option value="X">X</option>
-  					<option value="XI">XI</option>
-  					<option value="XII">XII</option>
-  					<option value="XIII">XIII</option>
-  					<option value="XIV">XIV</option>
-				</select>
-				<br>
+	    	<table>
+	    		<tr>
+	    			<th>Personal</th>
+
+	    			<th>Dirección</th>
+	    			
+	    			<th>Académico</th>
+	    		</tr>
+
+	    		<tr>
+	    		<td>
+	       
+		          <label for="name">Rut:</label>
+		          <br>
+		          <input type="text" name="rut_est" id="rut_est" default="Sin digito verificador">
+		          <br>
+		          <label for="name">Nombres:</label>
+		          <br>
+		          <input type="text" name="nombre_est" id="id_est">
+		          <br>
+		          <label for="name">Apellidos:</label>
+		          <br> 
+		          <input type="text" name="ape_est" id="ape_est">
+		          <br>
+		          <label for="name">Correo Electrónico:</label>
+		          <br>
+		          <input type="text" name="correo_est" id="correo_est">
+		          <br>
+		          <label for="name">Nacionalidad:</label>
+		          <br>
+		          <input type="text" name="nac_est" id="nac_est">
+		          <br>
+		          <label for="img">Foto Alumno:</label>
+		          <br>
+		          <input type="file" name="imagen" id="imagen">
+
+		          <br>
+		          <label for="date">Fecha de Nacimiento: <br> (FORMATO MES/DIA/AÑO)</label>
+		          <br>
+		          <input type="date" name="fecha_nac" id="fecha_nac">
+		          <br>
+		          <label for="name">Sexo Biologico</label>
+		            <br>
+		            <select name="sexo">
+		            	<option value="..">-- Elija --</option>
+	  					<option value="Masculino">Masculino</option>
+	  					<option value="Femenino">Femenino</option>
+					</select>
+					<br>
+
+	      	  </td>
+
+	      	 <td> 
+
+		          <label for="name">Ciudad:</label>
+		          <br>
+		          <input type="text" name="ciudad" id="ciudad">
+		          <br>
+		          <label for="name">Direccion:</label>
+		          <br>
+		          <input type="text" name="direccion" id="dir">
+		          <br>
+		          <label for="name">Region</label>
+		           <br> 
+		           <select name="region">
+		            	<option value="..">-- Elija --</option>
+	  					<option value="I">I</option>
+	  					<option value="II">II</option>
+	  					<option value="III">III</option>
+	  					<option value="IV">IV</option>
+	  					<option value="IV">IV</option>
+	  					<option value="V">V</option>
+	  					<option value="VI">VI</option>
+	  					<option value="VII">VII</option>
+	  					<option value="VIII">VIII</option>
+	  					<option value="IX">IX</option>
+	  					<option value="X">X</option>
+	  					<option value="XI">XI</option>
+	  					<option value="XII">XII</option>
+	  					<option value="XIII">XIII</option>
+	  					<option value="XIV">XIV</option>
+					</select>
+					<br>
+				
+				</td>
+				<td>
+					
 				<label for="name"> Colegio</label>
 	            <br>
 	            <select name="colegio">
@@ -215,18 +245,15 @@
 
 				</select>
 				<br>
-			   <label for="name">Sexo Biologico</label>
-	            <br>
-	            <select name="sexo">
-	            	<option value="..">-- Elija --</option>
-  					<option value="Masculino">Masculino</option>
-  					<option value="Femenino">Femenino</option>
-				</select>
-				<br>
-	      <input type="submit" value="Submit">
-	      </fieldset>
+			   
+	      <input type="submit" value="Subir datos">
+	      </td>
+	  </tr>
+	  
+	      </table>
 	    </form>
 	  </div>
+	
 </div>
 
     </body>

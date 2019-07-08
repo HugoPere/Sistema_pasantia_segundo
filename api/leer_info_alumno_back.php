@@ -1,7 +1,11 @@
 <?php
 			error_reporting(E_ALL);
 			$id_est = filter_input(INPUT_POST, 'id_est');
+
 			echo "<br> <a href='pagina_inicial_fron.php'> VOLVER AL MENU PRINCIPAL </a><br>";
+
+			echo "<br> <a href='leer_info_alumno_front.php'> VOLVER AL MENU ANTERIOR </a><br>";
+			
 			if(!empty($id_est)){
 				$dbhost = "localhost";
 				$dbusername = "root";
@@ -58,7 +62,7 @@
 
         						echo "Tipo Colegio: ".$row["tipo_colegio"]. "</td>";
 
-        						echo "<td> Carrera Pasantia: ".$row["carrera"]. "<br><br> </td>";
+        						//echo "<td> Carrera Pasantia: ".$row["carrera"]. "<br><br> </td>";
 
         						echo "</tr>";
 
@@ -81,7 +85,7 @@
 					}
 
 					else{
-					echo "Error"; 
+					echo "Error de SQL"; 
 					}
 				}
 

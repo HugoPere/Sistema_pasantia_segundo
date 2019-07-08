@@ -1,12 +1,12 @@
 <?php
 	error_reporting(E_ALL);
 	echo "<br> <a href='pagina_inicial_fron.php'> VOLVER AL MENU PRINCIPAL </a><br>";
+
+	echo "<br> <a href='asignar_profesor_pasantia_front.php'> VOLVER AL MENU ANTERIOR </a><br>";
 	$pasantia = filter_input(INPUT_POST, 'pasantia');	
 	$profesor = filter_input(INPUT_POST, 'Profesor');
 	$ayudante1 = filter_input(INPUT_POST, 'ayudante1');	
 	$ayudante2 = filter_input(INPUT_POST, 'ayudante2');	
-	
-
 	
 	$hola = 1;
 	
@@ -81,7 +81,7 @@
 		$conn->close();
 	}
 	else{
-		
+		echo "Error de conexión";
 		die;
 	}
 ?>

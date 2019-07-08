@@ -1,6 +1,9 @@
 <?php
 	error_reporting(E_ALL);
 	echo "<br> <a href='pagina_inicial_fron.php'> VOLVER AL MENU PRINCIPAL </a><br>";
+
+	echo "<br> <a href='subir_pasantia_front.php'> VOLVER AL MENU ANTERIOR </a><br>";
+	
 	$nombre = filter_input(INPUT_POST, 'nombre');	
 	$carrera = filter_input(INPUT_POST, 'Carrera/Doctrina');
 	$universidad = filter_input(INPUT_POST, 'Universidad');	
@@ -33,7 +36,7 @@
 			if(!empty($hola)){
 				// Attempt insert query execution
 
-				$sql = "INSERT INTO pasantia(nombre_pasantia, universidad, carrera, cupo, curso_min, curso_max, direccion, sala, duracion, horario) 
+				$sql = "INSERT INTO pasantia(nombre_pasantia, id_universidad, id_carrera, cupo, curso_min, curso_max, direccion, sala, duracion, horario) 
 					VALUES('$nombre', '$universidad', '$carrera', '$cupo', '$curso_min', '$curso_max', '$direccion', '$sala', '$duracion', '$horario')";
 
 				if(mysqli_query($conn, $sql)){
@@ -47,7 +50,7 @@
 		$conn->close();
 	}
 	else{
-		
+		echo "Error de conexión";
 		die;
 	}
 ?>
